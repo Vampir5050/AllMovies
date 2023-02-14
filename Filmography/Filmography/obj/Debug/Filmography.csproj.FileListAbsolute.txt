@@ -1,0 +1,10 @@
+D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\Filmography.exe.config
+D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\Filmography.exe
+D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\Filmography.pdb
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.AssemblyReference.cache
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.SuggestedBindingRedirects.cache
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.Properties.Resources.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.GenerateResource.cache
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.CoreCompileInputs.cache
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.exe
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.pdb
