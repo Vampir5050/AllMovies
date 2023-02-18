@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a7f3cb5b44734ec3964be499323d7b0e" Name="Diagram1">
+        <EntityTypeShape EntityType="FilmographyModel.Country" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Film" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.FilmStudio" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Genre" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Human" Width="1.5" PointX="3.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Display" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Translation" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmographyModel.Worker" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="FilmographyModel.FK__Films__Country_F__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Display__Films_F__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Films__FilmStudi__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Films__Genres_FK__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Translati__Films__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Workers__FilmSti__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmographyModel.FK__Workers__Humans___5FB337D6" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FilmographyModel.User" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
