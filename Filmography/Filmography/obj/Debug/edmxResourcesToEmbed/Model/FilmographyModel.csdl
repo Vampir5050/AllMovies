@@ -207,5 +207,17 @@
       <End Role="Humans" EntitySet="Humans" />
       <End Role="Workers" EntitySet="Workers" />
     </AssociationSet>
+    <EntitySet Name="Users" EntityType="FilmographyModel.User" />
   </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salt" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

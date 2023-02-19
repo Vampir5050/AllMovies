@@ -8,9 +8,11 @@ D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.Gen
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.CoreCompileInputs.cache
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.exe
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.pdb
-D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.Authorization.resources
 D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\EntityFramework.dll
 D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\EntityFramework.SqlServer.dll
 D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\EntityFramework.xml
 D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\EntityFramework.SqlServer.xml
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.CopyComplete
+D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\Pbkdf2.dll
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.RegistrationForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.AuthorizationForm.resources

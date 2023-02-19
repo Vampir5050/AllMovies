@@ -19,5 +19,6 @@ namespace Filmography.Model
         public string Password { get; set; }
         public string Role { get; set; }
         public string Salt { get; set; }
+        public string E_mail { get; set; }
     }
 }

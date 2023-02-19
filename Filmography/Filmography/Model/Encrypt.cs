@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Pbkdf2;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Filmography.Model
 {
     public class Encrypt
     {
-        private readonly Filmography _context;
 
         public string HashPassword(string password, string salt)
         {
