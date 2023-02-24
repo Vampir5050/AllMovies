@@ -36,6 +36,7 @@
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PasswordCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             this.Registration_linkLabel.AutoSize = true;
             this.Registration_linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Registration_linkLabel.Location = new System.Drawing.Point(126, 251);
+            this.Registration_linkLabel.Location = new System.Drawing.Point(132, 257);
             this.Registration_linkLabel.Name = "Registration_linkLabel";
             this.Registration_linkLabel.Size = new System.Drawing.Size(205, 20);
             this.Registration_linkLabel.TabIndex = 11;
@@ -56,7 +57,7 @@
             // EnterButton
             // 
             this.EnterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EnterButton.Location = new System.Drawing.Point(147, 173);
+            this.EnterButton.Location = new System.Drawing.Point(153, 179);
             this.EnterButton.Name = "EnterButton";
             this.EnterButton.Size = new System.Drawing.Size(143, 54);
             this.EnterButton.TabIndex = 3;
@@ -66,9 +67,10 @@
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(135, 125);
+            this.PasswordTextBox.Location = new System.Drawing.Point(141, 131);
             this.PasswordTextBox.Multiline = true;
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(196, 35);
             this.PasswordTextBox.TabIndex = 2;
             // 
@@ -76,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(182, 102);
+            this.label2.Location = new System.Drawing.Point(188, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 7;
@@ -86,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(196, 25);
+            this.label1.Location = new System.Drawing.Point(202, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 6;
@@ -94,7 +96,7 @@
             // 
             // LoginTextBox
             // 
-            this.LoginTextBox.Location = new System.Drawing.Point(135, 48);
+            this.LoginTextBox.Location = new System.Drawing.Point(141, 54);
             this.LoginTextBox.Multiline = true;
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(196, 35);
@@ -104,7 +106,7 @@
             // 
             this.pictureBox2.Image = global::Filmography.Properties.Resources.Users;
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(86, 44);
+            this.pictureBox2.Location = new System.Drawing.Point(92, 50);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(43, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,19 +117,32 @@
             // 
             this.pictureBox1.Image = global::Filmography.Properties.Resources.Password;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 121);
+            this.pictureBox1.Location = new System.Drawing.Point(92, 127);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // PasswordCheckBox
+            // 
+            this.PasswordCheckBox.AutoSize = true;
+            this.PasswordCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordCheckBox.Location = new System.Drawing.Point(343, 142);
+            this.PasswordCheckBox.Name = "PasswordCheckBox";
+            this.PasswordCheckBox.Size = new System.Drawing.Size(189, 24);
+            this.PasswordCheckBox.TabIndex = 15;
+            this.PasswordCheckBox.Text = "показать пароль";
+            this.PasswordCheckBox.UseVisualStyleBackColor = true;
+            this.PasswordCheckBox.CheckedChanged += new System.EventHandler(this.PasswordCheckBox_CheckedChanged);
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(505, 280);
+            this.ClientSize = new System.Drawing.Size(560, 301);
+            this.Controls.Add(this.PasswordCheckBox);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.pictureBox1);
@@ -155,6 +170,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox PasswordCheckBox;
     }
 }
 

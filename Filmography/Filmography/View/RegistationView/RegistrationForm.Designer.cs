@@ -41,6 +41,8 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RegButton = new System.Windows.Forms.Button();
+            this.PasswordCheckBox = new System.Windows.Forms.CheckBox();
+            this.AgainPasswordCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -118,6 +120,7 @@
             this.PasswordTextBox.Location = new System.Drawing.Point(218, 173);
             this.PasswordTextBox.Multiline = true;
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(216, 33);
             this.PasswordTextBox.TabIndex = 2;
             // 
@@ -126,6 +129,7 @@
             this.AgainPasTextBox.Location = new System.Drawing.Point(218, 243);
             this.AgainPasTextBox.Multiline = true;
             this.AgainPasTextBox.Name = "AgainPasTextBox";
+            this.AgainPasTextBox.PasswordChar = '*';
             this.AgainPasTextBox.Size = new System.Drawing.Size(216, 33);
             this.AgainPasTextBox.TabIndex = 3;
             // 
@@ -170,12 +174,38 @@
             this.RegButton.UseVisualStyleBackColor = true;
             this.RegButton.Click += new System.EventHandler(this.RegButton_Click);
             // 
+            // PasswordCheckBox
+            // 
+            this.PasswordCheckBox.AutoSize = true;
+            this.PasswordCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PasswordCheckBox.Location = new System.Drawing.Point(440, 180);
+            this.PasswordCheckBox.Name = "PasswordCheckBox";
+            this.PasswordCheckBox.Size = new System.Drawing.Size(186, 26);
+            this.PasswordCheckBox.TabIndex = 19;
+            this.PasswordCheckBox.Text = "показать пароль";
+            this.PasswordCheckBox.UseVisualStyleBackColor = true;
+            this.PasswordCheckBox.CheckedChanged += new System.EventHandler(this.PasswordCheckBox_CheckedChanged);
+            // 
+            // AgainPasswordCheckBox
+            // 
+            this.AgainPasswordCheckBox.AutoSize = true;
+            this.AgainPasswordCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AgainPasswordCheckBox.Location = new System.Drawing.Point(440, 250);
+            this.AgainPasswordCheckBox.Name = "AgainPasswordCheckBox";
+            this.AgainPasswordCheckBox.Size = new System.Drawing.Size(186, 26);
+            this.AgainPasswordCheckBox.TabIndex = 20;
+            this.AgainPasswordCheckBox.Text = "показать пароль";
+            this.AgainPasswordCheckBox.UseVisualStyleBackColor = true;
+            this.AgainPasswordCheckBox.CheckedChanged += new System.EventHandler(this.AgainPasswordCheckBox_CheckedChanged);
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(696, 373);
+            this.Controls.Add(this.AgainPasswordCheckBox);
+            this.Controls.Add(this.PasswordCheckBox);
             this.Controls.Add(this.RegButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox5);
@@ -215,5 +245,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button RegButton;
+        private System.Windows.Forms.CheckBox PasswordCheckBox;
+        private System.Windows.Forms.CheckBox AgainPasswordCheckBox;
     }
 }

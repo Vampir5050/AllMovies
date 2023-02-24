@@ -16,3 +16,4 @@ D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.csproj.Cop
 D:\Study\С#\Coursework\Filmography\Filmography\bin\Debug\Pbkdf2.dll
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.RegistrationForm.resources
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.AuthorizationForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.UserView.UserForm.resources

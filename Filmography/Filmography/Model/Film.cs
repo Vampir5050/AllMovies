@@ -38,5 +38,10 @@ namespace Filmography.Model
         public virtual Genre Genre { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Translation> Translations { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} - {YearRelease} - {Genre?.Genre1} - {Country?.CountryManufacture} - {FilmStudio?.Name} - {Viewers} - {Rating} - {Cost}";
+        }
     }
 }

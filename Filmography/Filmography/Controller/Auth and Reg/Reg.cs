@@ -32,7 +32,7 @@ namespace Filmography.Model
         public async Task<User> AddUser(User user)
         {
             user.Salt = Guid.NewGuid().ToString();
-            user.Password = _encrypt.HashPassword(user.Password, user.Salt);
+           user.Password = await _encrypt.HashPassword(user.Password, user.Salt);
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
@@ -45,30 +45,11 @@ namespace Filmography.Model
             
         }
 
-        public async Task<User> Login(string password, string login)
+        public async Task<User> CheckEmail(string email)
         {
-            var user = await CheckUser(login);
-            try
-            {
-                if (user.Password == _encrypt.HashPassword(password, user.Salt))
-                {
-                    MessageBox.Show($"Добро пожаловать {user.Login}");
-                }
-                else
-                {
-                    MessageBox.Show("Неверный пароль!");
-                }
-                return user;
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Пользователь не найден!");
-                return user;
-            }
-            
-           
-            
+            return await _context.Users.FirstOrDefaultAsync(u => u.E_mail == email);
         }
+
+      
     }
 }

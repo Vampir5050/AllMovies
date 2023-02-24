@@ -7,8 +7,6 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CountryManufacture" Type="nvarchar" MaxLength="100" />
   </EntityType>
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Filmography.dbo.Display" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="Display">
     <Key>
       <PropertyRef Name="id" />
@@ -57,8 +55,6 @@
     <Property Name="Address" Type="nvarchar" MaxLength="300" />
     <Property Name="Income" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Filmography.dbo.Translations" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="Translations">
     <Key>
       <PropertyRef Name="id" />
@@ -78,8 +74,6 @@
     <Property Name="Salt" Type="nvarchar" MaxLength="1000" />
     <Property Name="Role" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "Filmography.dbo.Workers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="Workers">
     <Key>
       <PropertyRef Name="id" />
@@ -89,7 +83,7 @@
     <Property Name="Post" Type="nvarchar" MaxLength="50" />
     <Property Name="Humans_FK" Type="int" />
   </EntityType>
-  <Association Name="FK__Display__Films_F__534D60F1">
+  <Association Name="FK__Display__Films_F__05D8E0BE">
     <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
     <End Role="Display" Type="Self.Display" Multiplicity="*" />
     <ReferentialConstraint>
@@ -137,7 +131,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Translati__Films__5165187F">
+  <Association Name="FK__Translati__Films__02FC7413">
     <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
     <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,7 +143,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Workers__FilmSti__5EBF139D">
+  <Association Name="FK__Workers__FilmSti__08B54D69">
     <End Role="FilmStudios" Type="Self.FilmStudios" Multiplicity="0..1" />
     <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -161,7 +155,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Workers__Humans___5FB337D6">
+  <Association Name="FK__Workers__Humans___09A971A2">
     <End Role="Humans" Type="Self.Humans" Multiplicity="0..1" />
     <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -175,34 +169,15 @@
   </Association>
   <EntityContainer Name="Хранилище FilmographyModelContainer">
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Display" EntityType="Self.Display" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Films" EntityType="Self.Films" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FilmStudios" EntityType="Self.FilmStudios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Humans" EntityType="Self.Humans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Translations" EntityType="Self.Translations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Display" EntityType="Self.Display" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Display].[id] AS [id], 
-    [Display].[Showing] AS [Showing], 
-    [Display].[Films_FK] AS [Films_FK]
-    FROM [dbo].[Display] AS [Display]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Translations" EntityType="Self.Translations" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Translations].[id] AS [id], 
-    [Translations].[Transleyt] AS [Transleyt], 
-    [Translations].[Films_FK] AS [Films_FK]
-    FROM [dbo].[Translations] AS [Translations]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Workers" EntityType="Self.Workers" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Workers].[id] AS [id], 
-    [Workers].[FilmStidios_FK] AS [FilmStidios_FK], 
-    [Workers].[Post] AS [Post], 
-    [Workers].[Humans_FK] AS [Humans_FK]
-    FROM [dbo].[Workers] AS [Workers]</DefiningQuery>
-    </EntitySet>
-    <AssociationSet Name="FK__Display__Films_F__534D60F1" Association="Self.FK__Display__Films_F__534D60F1">
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Display__Films_F__05D8E0BE" Association="Self.FK__Display__Films_F__05D8E0BE">
       <End Role="Films" EntitySet="Films" />
       <End Role="Display" EntitySet="Display" />
     </AssociationSet>
@@ -218,15 +193,15 @@
       <End Role="Genres" EntitySet="Genres" />
       <End Role="Films" EntitySet="Films" />
     </AssociationSet>
-    <AssociationSet Name="FK__Translati__Films__5165187F" Association="Self.FK__Translati__Films__5165187F">
+    <AssociationSet Name="FK__Translati__Films__02FC7413" Association="Self.FK__Translati__Films__02FC7413">
       <End Role="Films" EntitySet="Films" />
       <End Role="Translations" EntitySet="Translations" />
     </AssociationSet>
-    <AssociationSet Name="FK__Workers__FilmSti__5EBF139D" Association="Self.FK__Workers__FilmSti__5EBF139D">
+    <AssociationSet Name="FK__Workers__FilmSti__08B54D69" Association="Self.FK__Workers__FilmSti__08B54D69">
       <End Role="FilmStudios" EntitySet="FilmStudios" />
       <End Role="Workers" EntitySet="Workers" />
     </AssociationSet>
-    <AssociationSet Name="FK__Workers__Humans___5FB337D6" Association="Self.FK__Workers__Humans___5FB337D6">
+    <AssociationSet Name="FK__Workers__Humans___09A971A2" Association="Self.FK__Workers__Humans___09A971A2">
       <End Role="Humans" EntitySet="Humans" />
       <End Role="Workers" EntitySet="Workers" />
     </AssociationSet>
