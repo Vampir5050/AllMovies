@@ -17,7 +17,7 @@ namespace Filmography.Model
         private readonly Filmography _context;
 
 
-        //singlton start
+        
         //singlton start
         public static UserManagement instance { get => UserManagementCreate.instance; }
         private UserManagement()

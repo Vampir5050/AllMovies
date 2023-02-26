@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Controller\Auth and Reg\Auth.cs" />
     <Compile Include="Controller\Auth and Reg\IEncrypt.cs" />
+    <Compile Include="Controller\RequestClass.cs" />
     <Compile Include="Controller\UserManagement.cs" />
     <Compile Include="Controller\Auth and Reg\Reg.cs" />
     <Compile Include="Model\Country.cs">
@@ -108,6 +109,8 @@
     <Compile Include="Model\Worker.cs">
       <DependentUpon>FilmographyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MoreLinq\MoreEnumerable.MaxBy.cs" />
+    <Compile Include="MoreLinq\MoreEnumerable.MinBy.cs" />
     <Compile Include="View\AuthorizationView\Authorization.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +124,12 @@
     </Compile>
     <Compile Include="View\RegistationView\RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RequestsView\RequestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RequestsView\RequestsForm.Designer.cs">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserView\UserForm.cs">
       <SubType>Form</SubType>
@@ -143,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistationView\RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RequestsView\RequestsForm.resx">
+      <DependentUpon>RequestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserView\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

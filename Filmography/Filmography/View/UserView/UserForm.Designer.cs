@@ -37,6 +37,7 @@
             this.YearRadioButton = new System.Windows.Forms.RadioButton();
             this.SortCheckBox = new System.Windows.Forms.CheckBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.RequestsButton = new System.Windows.Forms.Button();
             this.SortGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,12 +143,23 @@
             this.listBox1.Size = new System.Drawing.Size(799, 468);
             this.listBox1.TabIndex = 0;
             // 
+            // RequestsButton
+            // 
+            this.RequestsButton.Location = new System.Drawing.Point(1043, 9);
+            this.RequestsButton.Name = "RequestsButton";
+            this.RequestsButton.Size = new System.Drawing.Size(184, 23);
+            this.RequestsButton.TabIndex = 4;
+            this.RequestsButton.Text = "форма запросов";
+            this.RequestsButton.UseVisualStyleBackColor = true;
+            this.RequestsButton.Click += new System.EventHandler(this.RequestsButton_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1260, 514);
+            this.Controls.Add(this.RequestsButton);
             this.Controls.Add(this.SortCheckBox);
             this.Controls.Add(this.SortGroupBox);
             this.Controls.Add(this.label1);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.CheckBox SortCheckBox;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox MetodComboBox;
+        private System.Windows.Forms.Button RequestsButton;
     }
 }

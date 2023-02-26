@@ -25,5 +25,10 @@ namespace Filmography.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film> Films { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Genre1}";
+        }
     }
 }

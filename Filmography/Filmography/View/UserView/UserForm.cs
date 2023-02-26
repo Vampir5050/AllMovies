@@ -1,4 +1,5 @@
 ﻿using Filmography.Model;
+using Filmography.View.Requests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,12 @@ namespace Filmography.View.UserView
                 myfilms = UserManagement.instance.SortAscending(myfilms, index);
             }
             myfilms.ForEach(ShowFilms);
+        }
+
+        private void RequestsButton_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new RequestsForm().ShowDialog();
         }
     }
 }

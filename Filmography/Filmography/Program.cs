@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Filmography.View.Requests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Filmography
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthorizationForm());
+            Application.Run(new RequestsForm());
         }
     }
 }
