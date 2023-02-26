@@ -30,5 +30,10 @@ namespace Filmography.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Worker> Workers { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} - {LastName} - {Gender} - {PlaceResidence} - {Address} - {Income}";
+        }
     }
 }

@@ -42,6 +42,8 @@
             this.GenreComboBox = new System.Windows.Forms.ComboBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.Req3tabPage = new System.Windows.Forms.TabPage();
+            this.Req3MaxNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Req3MinNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.SearchReq3button = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,17 +51,25 @@
             this.Req3YearComboBox = new System.Windows.Forms.ComboBox();
             this.Riq3CountryComboBox = new System.Windows.Forms.ComboBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.Req3MinNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Req3MaxNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Req4tabPage = new System.Windows.Forms.TabPage();
-            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.Req6tabPage = new System.Windows.Forms.TabPage();
+            this.SearchReq6button = new System.Windows.Forms.Button();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.Req7tabPage = new System.Windows.Forms.TabPage();
+            this.SearchReq7button = new System.Windows.Forms.Button();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.Req8tabPage = new System.Windows.Forms.TabPage();
+            this.SearchReq8button = new System.Windows.Forms.Button();
+            this.Req8FilmsComboBox = new System.Windows.Forms.ComboBox();
+            this.listBox8 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.Req1tabPage.SuspendLayout();
             this.Req2tabPage.SuspendLayout();
             this.Req3tabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Req3MinNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Req3MaxNumericUpDown)).BeginInit();
-            this.Req4tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Req3MinNumericUpDown)).BeginInit();
+            this.Req6tabPage.SuspendLayout();
+            this.Req7tabPage.SuspendLayout();
+            this.Req8tabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -67,7 +77,9 @@
             this.tabControl1.Controls.Add(this.Req1tabPage);
             this.tabControl1.Controls.Add(this.Req2tabPage);
             this.tabControl1.Controls.Add(this.Req3tabPage);
-            this.tabControl1.Controls.Add(this.Req4tabPage);
+            this.tabControl1.Controls.Add(this.Req6tabPage);
+            this.tabControl1.Controls.Add(this.Req7tabPage);
+            this.tabControl1.Controls.Add(this.Req8tabPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -221,6 +233,50 @@
             this.Req3tabPage.TabIndex = 2;
             this.Req3tabPage.Text = "запрос 3";
             // 
+            // Req3MaxNumericUpDown
+            // 
+            this.Req3MaxNumericUpDown.Location = new System.Drawing.Point(204, 210);
+            this.Req3MaxNumericUpDown.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.Req3MaxNumericUpDown.Minimum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.Req3MaxNumericUpDown.Name = "Req3MaxNumericUpDown";
+            this.Req3MaxNumericUpDown.Size = new System.Drawing.Size(164, 22);
+            this.Req3MaxNumericUpDown.TabIndex = 9;
+            this.Req3MaxNumericUpDown.Value = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            // 
+            // Req3MinNumericUpDown
+            // 
+            this.Req3MinNumericUpDown.Location = new System.Drawing.Point(11, 209);
+            this.Req3MinNumericUpDown.Maximum = new decimal(new int[] {
+            -1486618625,
+            232830643,
+            0,
+            0});
+            this.Req3MinNumericUpDown.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.Req3MinNumericUpDown.Name = "Req3MinNumericUpDown";
+            this.Req3MinNumericUpDown.Size = new System.Drawing.Size(164, 22);
+            this.Req3MinNumericUpDown.TabIndex = 8;
+            this.Req3MinNumericUpDown.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            // 
             // SearchReq3button
             // 
             this.SearchReq3button.Location = new System.Drawing.Point(20, 303);
@@ -286,68 +342,104 @@
             this.listBox3.Size = new System.Drawing.Size(541, 452);
             this.listBox3.TabIndex = 0;
             // 
-            // Req3MinNumericUpDown
+            // Req6tabPage
             // 
-            this.Req3MinNumericUpDown.Location = new System.Drawing.Point(11, 209);
-            this.Req3MinNumericUpDown.Maximum = new decimal(new int[] {
-            -1486618625,
-            232830643,
-            0,
-            0});
-            this.Req3MinNumericUpDown.Minimum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.Req3MinNumericUpDown.Name = "Req3MinNumericUpDown";
-            this.Req3MinNumericUpDown.Size = new System.Drawing.Size(164, 22);
-            this.Req3MinNumericUpDown.TabIndex = 8;
-            this.Req3MinNumericUpDown.Value = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
+            this.Req6tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Req6tabPage.Controls.Add(this.SearchReq6button);
+            this.Req6tabPage.Controls.Add(this.listBox6);
+            this.Req6tabPage.Location = new System.Drawing.Point(4, 25);
+            this.Req6tabPage.Name = "Req6tabPage";
+            this.Req6tabPage.Size = new System.Drawing.Size(1084, 474);
+            this.Req6tabPage.TabIndex = 3;
+            this.Req6tabPage.Text = "запрос 6";
             // 
-            // Req3MaxNumericUpDown
+            // SearchReq6button
             // 
-            this.Req3MaxNumericUpDown.Location = new System.Drawing.Point(204, 210);
-            this.Req3MaxNumericUpDown.Maximum = new decimal(new int[] {
-            1874919423,
-            2328306,
-            0,
-            0});
-            this.Req3MaxNumericUpDown.Minimum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.Req3MaxNumericUpDown.Name = "Req3MaxNumericUpDown";
-            this.Req3MaxNumericUpDown.Size = new System.Drawing.Size(164, 22);
-            this.Req3MaxNumericUpDown.TabIndex = 9;
-            this.Req3MaxNumericUpDown.Value = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
+            this.SearchReq6button.Location = new System.Drawing.Point(49, 75);
+            this.SearchReq6button.Name = "SearchReq6button";
+            this.SearchReq6button.Size = new System.Drawing.Size(289, 138);
+            this.SearchReq6button.TabIndex = 1;
+            this.SearchReq6button.Text = "поиск";
+            this.SearchReq6button.UseVisualStyleBackColor = true;
+            this.SearchReq6button.Click += new System.EventHandler(this.SearchReq6button_Click);
             // 
-            // Req4tabPage
+            // listBox6
             // 
-            this.Req4tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.Req4tabPage.Controls.Add(this.listBox4);
-            this.Req4tabPage.Location = new System.Drawing.Point(4, 25);
-            this.Req4tabPage.Name = "Req4tabPage";
-            this.Req4tabPage.Size = new System.Drawing.Size(1084, 474);
-            this.Req4tabPage.TabIndex = 3;
-            this.Req4tabPage.Text = "запрос 4";
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.ItemHeight = 16;
+            this.listBox6.Location = new System.Drawing.Point(444, 3);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(622, 452);
+            this.listBox6.TabIndex = 0;
             // 
-            // listBox4
+            // Req7tabPage
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 16;
-            this.listBox4.Location = new System.Drawing.Point(509, 3);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(557, 452);
-            this.listBox4.TabIndex = 0;
+            this.Req7tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Req7tabPage.Controls.Add(this.SearchReq7button);
+            this.Req7tabPage.Controls.Add(this.listBox7);
+            this.Req7tabPage.Location = new System.Drawing.Point(4, 25);
+            this.Req7tabPage.Name = "Req7tabPage";
+            this.Req7tabPage.Size = new System.Drawing.Size(1084, 474);
+            this.Req7tabPage.TabIndex = 4;
+            this.Req7tabPage.Text = "запрос 7";
+            // 
+            // SearchReq7button
+            // 
+            this.SearchReq7button.Location = new System.Drawing.Point(81, 81);
+            this.SearchReq7button.Name = "SearchReq7button";
+            this.SearchReq7button.Size = new System.Drawing.Size(273, 152);
+            this.SearchReq7button.TabIndex = 1;
+            this.SearchReq7button.Text = "поиск";
+            this.SearchReq7button.UseVisualStyleBackColor = true;
+            this.SearchReq7button.Click += new System.EventHandler(this.SearchReq7button_Click);
+            // 
+            // listBox7
+            // 
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 16;
+            this.listBox7.Location = new System.Drawing.Point(533, 3);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(533, 468);
+            this.listBox7.TabIndex = 0;
+            // 
+            // Req8tabPage
+            // 
+            this.Req8tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Req8tabPage.Controls.Add(this.SearchReq8button);
+            this.Req8tabPage.Controls.Add(this.Req8FilmsComboBox);
+            this.Req8tabPage.Controls.Add(this.listBox8);
+            this.Req8tabPage.Location = new System.Drawing.Point(4, 25);
+            this.Req8tabPage.Name = "Req8tabPage";
+            this.Req8tabPage.Size = new System.Drawing.Size(1084, 474);
+            this.Req8tabPage.TabIndex = 5;
+            this.Req8tabPage.Text = "запрос 8";
+            // 
+            // SearchReq8button
+            // 
+            this.SearchReq8button.Location = new System.Drawing.Point(51, 156);
+            this.SearchReq8button.Name = "SearchReq8button";
+            this.SearchReq8button.Size = new System.Drawing.Size(207, 54);
+            this.SearchReq8button.TabIndex = 2;
+            this.SearchReq8button.Text = "поиск";
+            this.SearchReq8button.UseVisualStyleBackColor = true;
+            this.SearchReq8button.Click += new System.EventHandler(this.SearchReq8button_Click);
+            // 
+            // Req8FilmsComboBox
+            // 
+            this.Req8FilmsComboBox.FormattingEnabled = true;
+            this.Req8FilmsComboBox.Location = new System.Drawing.Point(28, 71);
+            this.Req8FilmsComboBox.Name = "Req8FilmsComboBox";
+            this.Req8FilmsComboBox.Size = new System.Drawing.Size(266, 24);
+            this.Req8FilmsComboBox.TabIndex = 1;
+            // 
+            // listBox8
+            // 
+            this.listBox8.FormattingEnabled = true;
+            this.listBox8.ItemHeight = 16;
+            this.listBox8.Location = new System.Drawing.Point(468, 3);
+            this.listBox8.Name = "listBox8";
+            this.listBox8.Size = new System.Drawing.Size(598, 452);
+            this.listBox8.TabIndex = 0;
             // 
             // RequestsForm
             // 
@@ -365,9 +457,11 @@
             this.Req2tabPage.PerformLayout();
             this.Req3tabPage.ResumeLayout(false);
             this.Req3tabPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Req3MinNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Req3MaxNumericUpDown)).EndInit();
-            this.Req4tabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Req3MinNumericUpDown)).EndInit();
+            this.Req6tabPage.ResumeLayout(false);
+            this.Req7tabPage.ResumeLayout(false);
+            this.Req8tabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,7 +491,15 @@
         private System.Windows.Forms.Button SearchReq3button;
         private System.Windows.Forms.NumericUpDown Req3MaxNumericUpDown;
         private System.Windows.Forms.NumericUpDown Req3MinNumericUpDown;
-        private System.Windows.Forms.TabPage Req4tabPage;
-        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.TabPage Req6tabPage;
+        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.Button SearchReq6button;
+        private System.Windows.Forms.TabPage Req7tabPage;
+        private System.Windows.Forms.Button SearchReq7button;
+        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.TabPage Req8tabPage;
+        private System.Windows.Forms.Button SearchReq8button;
+        private System.Windows.Forms.ComboBox Req8FilmsComboBox;
+        private System.Windows.Forms.ListBox listBox8;
     }
 }

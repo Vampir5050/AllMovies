@@ -91,6 +91,28 @@ namespace Filmography.Controller
             return films;
         }
 
+        public async Task<List<Worker>> Request6()
+        {
+            var humans = await _context.Workers.Include(x=>x.Human).ToListAsync();
+            humans = (from x in humans
+                          where x.Human.Gender.StartsWith("м") && x.Post.StartsWith("Актер") || x.Human.Address.StartsWith("г. Париж") && x.Post.StartsWith("Актер")
+                          select x).ToList();
+                return humans;
+        }
+        public async Task<List<Worker>> Request7()
+        {
+            var humans = await _context.Workers.Include(x => x.Human).ToListAsync();
+            humans = (from x in humans
+                      where x.Human.Gender.StartsWith("ж") && x.Post.StartsWith("Актер") &&  x.Human.Income > 100000
+                      || x.Human.Gender.StartsWith("ж") && x.Post.StartsWith("Президент")  &&  x.Human.Income > 100000
+                      || x.Human.Gender.StartsWith("ж") && x.Post.StartsWith("Продюсер") && x.Human.Income > 100000
+                      select x).ToList();
+            return humans;
+        }
+       // public async Task<List<FilmStudio>> Request8()
+       
+
+
             
 
 

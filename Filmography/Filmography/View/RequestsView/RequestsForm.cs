@@ -31,6 +31,8 @@ namespace Filmography.View.Requests
 
             Req3tabPage.Enter += new EventHandler(Req3tabPage_Enter);
 
+            Req8tabPage.Enter += new EventHandler(Req8tabPage_Enter);
+
 
         }
         private void ShowGenre(Genre genreCol)
@@ -39,7 +41,7 @@ namespace Filmography.View.Requests
         }
         private void ShowFilms(Film filmCol)
         {
-            FilmcomboBox.Items.Add(filmCol.Name);
+            Req8FilmsComboBox.Items.Add(filmCol.Name);
         }
         private void ShowCountres(Country countryCol)
         {
@@ -93,6 +95,10 @@ namespace Filmography.View.Requests
             
 
         }
+        private void Req8tabPage_Enter(object sender, EventArgs e)
+        {
+            filmCol.ForEach(ShowFilms);
+        }
 
 
 
@@ -117,14 +123,58 @@ namespace Filmography.View.Requests
         }
         private async void SearchReq3button_Click(object sender, EventArgs e)
         {
-            var x = await RequestClass.instance.Request3(Req3YearComboBox.SelectedItem.ToString(), Riq3CountryComboBox.SelectedItem.ToString(),
-                Req3MinNumericUpDown.Value, Req3MaxNumericUpDown.Value);
-            foreach (var item in x)
+            listBox3.Items.Clear();
+            try
             {
-                listBox3.Items.Add(item).ToString();
+                var x = await RequestClass.instance.Request3(Req3YearComboBox.SelectedItem.ToString(), Riq3CountryComboBox.SelectedItem.ToString(),
+                Req3MinNumericUpDown.Value, Req3MaxNumericUpDown.Value);
+                foreach (var item in x)
+                {
+                    listBox3.Items.Add(item).ToString();
+                }
             }
+            catch { }
+            
         }
+        private async void SearchReq6button_Click(object sender, EventArgs e)
+        {
+            listBox6.Items.Clear();
+            try
+            {
+                var items = await RequestClass.instance.Request6();
+                var humans = items.GroupBy(x => x.Human).Select(y => y.First());
+                string s;
+                foreach (var item in humans)
+                {
+                    s = $"{item.Human.FirstName} - {item.Human.LastName} - {item.Post} - {item.Human.Gender} - {item.Human.Address}";
+                    listBox6.Items.Add(s);
+                }
+            }
+            catch { }
+            
+        }
+        private async void SearchReq7button_Click(object sender, EventArgs e)
+        {
+            listBox7.Items.Clear();
+            try
+            {
+                var items = await RequestClass.instance.Request7();
+                var humans = items.GroupBy(x => new { x.Human.FirstName, x.Post }).Select(y => y.First());
+                humans = humans.OrderBy(x => x.Human.FirstName);
+                string s;
+                foreach (var item in humans)
+                {
+                    s = $"{item.Human.FirstName} - {item.Human.LastName} - {item.Post} - {item.Human.Gender} - {item.Human.Address}";
+                    listBox7.Items.Add(s);
+                }
+            }
+            catch { }
+           
+        }
+        private void SearchReq8button_Click(object sender, EventArgs e)
+        {
 
+        }
 
 
 
@@ -138,5 +188,6 @@ namespace Filmography.View.Requests
 
         }
 
+       
     }
 }
