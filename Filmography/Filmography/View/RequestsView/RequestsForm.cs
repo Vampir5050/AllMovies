@@ -18,13 +18,17 @@ namespace Filmography.View.Requests
 {
     public partial class RequestsForm : Form
     {
-        List<Genre> genreCol;
-        List<Film> filmCol;
+        List<Genres> genreCol;
+        List<Films> filmCol;
         List<Country> countryCol;
+        List<Humans> humansCol;
+        List<Workers> presidentCol; 
         public RequestsForm()
         {
             InitializeComponent();
             Request1comboBox.SelectedIndexChanged += new EventHandler(Requestions1Event);
+            Req7tabPage.Parent = null;
+
 
             GenreComboBox.SelectedIndexChanged += new EventHandler(Requestions2Event);
             CountrycomboBox.SelectedIndexChanged += new EventHandler(Requestions2Event);
@@ -35,17 +39,23 @@ namespace Filmography.View.Requests
 
 
         }
-        private void ShowGenre(Genre genreCol)
+        private void ShowGenre(Genres genreCol)
         {
-            GenreComboBox.Items.Add(genreCol.Genre1);
+            GenreComboBox.Items.Add(genreCol.Genre);
+          
         }
-        private void ShowFilms(Film filmCol)
-        {
-            Req8FilmsComboBox.Items.Add(filmCol.Name);
+        private void ShowFilms(Films filmCol)
+        {   
+                Req8FilmsComboBox.Items.Add(filmCol.Name);
         }
         private void ShowCountres(Country countryCol)
         {
             CountrycomboBox.Items.Add(countryCol.CountryManufacture);
+        }
+        private void ShowHumans(Humans humansCol)
+        {
+            string s = $"{humansCol.FirstName} - {humansCol.LastName}";
+            Req9ActorComboBox.Items.Add(s);
         }
 
 
@@ -64,7 +74,7 @@ namespace Filmography.View.Requests
             {
                 foreach (var item in filmCol)
                 {
-                    if (item.Genre.Genre1 == GenreComboBox.SelectedItem.ToString() && item.Country.CountryManufacture == CountrycomboBox.SelectedItem.ToString())
+                    if (item.Genres.Genre == GenreComboBox.SelectedItem.ToString() && item.Country.CountryManufacture == CountrycomboBox.SelectedItem.ToString())
                     {
                         FilmcomboBox.Items.Add(item.Name);
                     }
@@ -97,7 +107,12 @@ namespace Filmography.View.Requests
         }
         private void Req8tabPage_Enter(object sender, EventArgs e)
         {
-            filmCol.ForEach(ShowFilms);
+            try
+            {
+                filmCol.ForEach(ShowFilms);
+
+            }
+            catch { }
         }
 
 
@@ -142,11 +157,11 @@ namespace Filmography.View.Requests
             try
             {
                 var items = await RequestClass.instance.Request6();
-                var humans = items.GroupBy(x => x.Human).Select(y => y.First());
+                var humans = items.GroupBy(x => x.Humans).Select(y => y.First());
                 string s;
                 foreach (var item in humans)
                 {
-                    s = $"{item.Human.FirstName} - {item.Human.LastName} - {item.Post} - {item.Human.Gender} - {item.Human.Address}";
+                    s = $"{item.Humans.FirstName} - {item.Humans.LastName} - {item.Post} - {item.Humans.Gender} - {item.Humans.Address}";
                     listBox6.Items.Add(s);
                 }
             }
@@ -159,22 +174,69 @@ namespace Filmography.View.Requests
             try
             {
                 var items = await RequestClass.instance.Request7();
-                var humans = items.GroupBy(x => new { x.Human.FirstName, x.Post }).Select(y => y.First());
-                humans = humans.OrderBy(x => x.Human.FirstName);
+                var humans = items.GroupBy(x => new { x.Post, x.Humans.FirstName, x.Humans.LastName }).Select(grp=>grp.First());
                 string s;
-                foreach (var item in humans)
+                foreach (var item in humans.OrderBy(x=>x.Humans.FirstName))
                 {
-                    s = $"{item.Human.FirstName} - {item.Human.LastName} - {item.Post} - {item.Human.Gender} - {item.Human.Address}";
+                    s = $"{item.Humans.FirstName} - {item.Humans.LastName} - {item.Post} - {item.Humans.Gender} - {item.Humans.Address} - {item.Humans.Income}$";
                     listBox7.Items.Add(s);
                 }
             }
             catch { }
            
         }
-        private void SearchReq8button_Click(object sender, EventArgs e)
+        private async void SearchReq8button_Click(object sender, EventArgs e)
         {
+            listBox8.Items.Clear();
+            try
+            {
+                var humans = await RequestClass.instance.Request8(Req8FilmsComboBox.SelectedItem.ToString());
+                string str = "";
+                foreach (var item in humans)
+                {
+                    str = $"{item.Humans.FirstName} - {item.Humans.LastName} - {item.Humans.Gender} - {item.Post}";
+                    listBox8.Items.Add(str);
+                }
+            }
+            catch { };
+           
+        }
+        private async void SearchReq9button_Click(object sender, EventArgs e)
+        {
+            listBox9.Items.Clear();
+            string firstName = Req9ActorComboBox.SelectedItem.ToString();
+            int pos = firstName.LastIndexOf('-');
+            string lastName = firstName.Substring(pos+2);
+            firstName = firstName.Substring(0, pos-1);
+            var films = await RequestClass.instance.Request9(firstName, lastName, Req9YearComboBox.SelectedItem.ToString());
+            foreach (var item in films)
+            {
+                listBox9.Items.Add(item.Films.Name);
+            }
 
         }
+        private async void SearchReq10button_Click(object sender, EventArgs e)
+        {
+            listBox10.Items.Clear();
+
+            try
+            {
+                string firstName = Req10HumansComboBox.SelectedItem.ToString();
+                int pos = firstName.LastIndexOf('-');
+                string lastName = firstName.Substring(pos + 2);
+                firstName = firstName.Substring(0, pos - 1);
+                var items = await RequestClass.instance.Request10(firstName, lastName);
+                var humans = items.GroupBy(x => new { x.Post, x.Humans.FirstName, x.Humans.LastName }).Select(grp => grp.First());
+                string str;
+                foreach (var item in humans)
+                {
+                    str = $"{item.Humans.FirstName} - {item.Humans.LastName} - {item.Post} - {item.Humans.Income}";
+                    listBox10.Items.Add(str);
+                }
+            }
+            catch { };
+        }
+
 
 
 
@@ -183,8 +245,25 @@ namespace Filmography.View.Requests
             genreCol = await RequestClass.instance.GetGenres();
             filmCol = await RequestClass.instance.GetFilms();
             countryCol = await RequestClass.instance.GetCountries();
+            humansCol = await RequestClass.instance.GetHumans();
+            presidentCol = await RequestClass.instance.GetPresident();
             countryCol.ForEach(ShowCountres);
             genreCol.ForEach(ShowGenre);
+            humansCol.ForEach(ShowHumans);
+            var films = (from x in filmCol
+                         orderby x.YearRelease
+                         select x.YearRelease).Distinct();
+            foreach (var item in films)
+            {
+                Req9YearComboBox.Items.Add(item);
+
+            }
+            string s;
+            foreach (var item in presidentCol)
+            {
+                s = $"{item.Humans.FirstName} - {item.Humans.LastName}";
+                Req10HumansComboBox.Items.Add(s);
+            }
 
         }
 

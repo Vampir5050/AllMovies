@@ -12,14 +12,18 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Worker
+    public partial class Genres
     {
-        public int id { get; set; }
-        public Nullable<int> FilmStidios_FK { get; set; }
-        public string Post { get; set; }
-        public Nullable<int> Humans_FK { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Genres()
+        {
+            this.Films = new HashSet<Films>();
+        }
     
-        public virtual FilmStudio FilmStudio { get; set; }
-        public virtual Human Human { get; set; }
+        public int id { get; set; }
+        public string Genre { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Films> Films { get; set; }
     }
 }

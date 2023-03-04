@@ -1,4 +1,5 @@
-﻿using Filmography.Model;
+﻿using Filmography.Controller.Auth_and_Reg;
+using Filmography.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,7 @@ namespace Filmography.View
                 return;
             }
             #endregion
-            await Reg.instance.AddUser(new User { Login = LoginTextBox.Text, Password = PasswordTextBox.Text, E_mail = EmailTextBox.Text, Role = "Пользователь" });
+            await Reg.instance.AddUser(new Users { Login = LoginTextBox.Text, Password = PasswordTextBox.Text, E_mail = EmailTextBox.Text, Role = "Пользователь" });
             this.DialogResult = DialogResult.OK;
 
         }

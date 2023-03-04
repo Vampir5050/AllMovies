@@ -12,12 +12,22 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Translation
+    public partial class Workers
     {
-        public int id { get; set; }
-        public string Transleyt { get; set; }
-        public Nullable<int> Films_FK { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Workers()
+        {
+            this.FilmStudios = new HashSet<FilmStudios>();
+        }
     
-        public virtual Film Film { get; set; }
+        public int id { get; set; }
+        public Nullable<int> Films_FK { get; set; }
+        public string Post { get; set; }
+        public Nullable<int> Humans_FK { get; set; }
+    
+        public virtual Films Films { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FilmStudios> FilmStudios { get; set; }
+        public virtual Humans Humans { get; set; }
     }
 }

@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FilmographyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryManufacture" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Films__Country_F__3B75D760" FromRole="Country" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="Display">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Showing" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Films_FK" Type="Int32" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Display__Films_F__49C3F6B7" FromRole="Display" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="Films">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="YearRelease" Type="Int32" />
+    <Property Name="Genres_FK" Type="Int32" />
+    <Property Name="Country_FK" Type="Int32" />
+    <Property Name="Viewers" Type="Int32" />
+    <Property Name="Rating" Type="Double" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Films__Country_F__3B75D760" FromRole="Films" ToRole="Country" />
+    <NavigationProperty Name="Display" Relationship="Self.FK__Display__Films_F__49C3F6B7" FromRole="Films" ToRole="Display" />
+    <NavigationProperty Name="Genres" Relationship="Self.FK__Films__Genres_FK__3A81B327" FromRole="Films" ToRole="Genres" />
+    <NavigationProperty Name="Translations" Relationship="Self.FK__Translati__Films__46E78A0C" FromRole="Films" ToRole="Translations" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__Films_F__403A8C7D" FromRole="Films" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="FilmStudios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Workers_FK" Type="Int32" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__FilmStudi__Worke__440B1D61" FromRole="FilmStudios" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Genre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Films__Genres_FK__3A81B327" FromRole="Genres" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="Humans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceResidence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Income" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Workers" Relationship="Self.FK__Workers__Humans___412EB0B6" FromRole="Humans" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Translations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Transleyt" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Films_FK" Type="Int32" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Translati__Films__46E78A0C" FromRole="Translations" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="E_mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Salt" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Films_FK" Type="Int32" />
+    <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Humans_FK" Type="Int32" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__Workers__Films_F__403A8C7D" FromRole="Workers" ToRole="Films" />
+    <NavigationProperty Name="FilmStudios" Relationship="Self.FK__FilmStudi__Worke__440B1D61" FromRole="Workers" ToRole="FilmStudios" />
+    <NavigationProperty Name="Humans" Relationship="Self.FK__Workers__Humans___412EB0B6" FromRole="Workers" ToRole="Humans" />
+  </EntityType>
+  <Association Name="FK__Films__Country_F__3B75D760">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Films" Type="Self.Films" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Films">
+        <PropertyRef Name="Country_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Display__Films_F__49C3F6B7">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="Display" Type="Self.Display" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Display">
+        <PropertyRef Name="Films_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Films__Genres_FK__3A81B327">
+    <End Role="Genres" Type="Self.Genres" Multiplicity="0..1" />
+    <End Role="Films" Type="Self.Films" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genres">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Films">
+        <PropertyRef Name="Genres_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Translati__Films__46E78A0C">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="Translations" Type="Self.Translations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Translations">
+        <PropertyRef Name="Films_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__Films_F__403A8C7D">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="Films_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FilmStudi__Worke__440B1D61">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="0..1" />
+    <End Role="FilmStudios" Type="Self.FilmStudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FilmStudios">
+        <PropertyRef Name="Workers_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Workers__Humans___412EB0B6">
+    <End Role="Humans" Type="Self.Humans" Multiplicity="0..1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Humans">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="Humans_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Filmography" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Display" EntityType="Self.Display" />
+    <EntitySet Name="Films" EntityType="Self.Films" />
+    <EntitySet Name="FilmStudios" EntityType="Self.FilmStudios" />
+    <EntitySet Name="Genres" EntityType="Self.Genres" />
+    <EntitySet Name="Humans" EntityType="Self.Humans" />
+    <EntitySet Name="Translations" EntityType="Self.Translations" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" />
+    <AssociationSet Name="FK__Films__Country_F__3B75D760" Association="Self.FK__Films__Country_F__3B75D760">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Films" EntitySet="Films" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Display__Films_F__49C3F6B7" Association="Self.FK__Display__Films_F__49C3F6B7">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="Display" EntitySet="Display" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Films__Genres_FK__3A81B327" Association="Self.FK__Films__Genres_FK__3A81B327">
+      <End Role="Genres" EntitySet="Genres" />
+      <End Role="Films" EntitySet="Films" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Translati__Films__46E78A0C" Association="Self.FK__Translati__Films__46E78A0C">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="Translations" EntitySet="Translations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__Films_F__403A8C7D" Association="Self.FK__Workers__Films_F__403A8C7D">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FilmStudi__Worke__440B1D61" Association="Self.FK__FilmStudi__Worke__440B1D61">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="FilmStudios" EntitySet="FilmStudios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Workers__Humans___412EB0B6" Association="Self.FK__Workers__Humans___412EB0B6">
+      <End Role="Humans" EntitySet="Humans" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

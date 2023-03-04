@@ -12,12 +12,12 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Human
+    public partial class Humans
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Human()
+        public Humans()
         {
-            this.Workers = new HashSet<Worker>();
+            this.Workers = new HashSet<Workers>();
         }
     
         public int id { get; set; }
@@ -29,11 +29,6 @@ namespace Filmography.Model
         public Nullable<decimal> Income { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Workers { get; set; }
-
-        public override string ToString()
-        {
-            return $"{FirstName} - {LastName} - {Gender} - {PlaceResidence} - {Address} - {Income}";
-        }
+        public virtual ICollection<Workers> Workers { get; set; }
     }
 }

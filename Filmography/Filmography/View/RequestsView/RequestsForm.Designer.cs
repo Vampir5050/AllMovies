@@ -61,6 +61,18 @@
             this.SearchReq8button = new System.Windows.Forms.Button();
             this.Req8FilmsComboBox = new System.Windows.Forms.ComboBox();
             this.listBox8 = new System.Windows.Forms.ListBox();
+            this.Req9tabPage = new System.Windows.Forms.TabPage();
+            this.listBox9 = new System.Windows.Forms.ListBox();
+            this.Req9ActorComboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Req9YearComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SearchReq9button = new System.Windows.Forms.Button();
+            this.Req10tabPage = new System.Windows.Forms.TabPage();
+            this.listBox10 = new System.Windows.Forms.ListBox();
+            this.Req10HumansComboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SearchReq10button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Req1tabPage.SuspendLayout();
             this.Req2tabPage.SuspendLayout();
@@ -70,6 +82,8 @@
             this.Req6tabPage.SuspendLayout();
             this.Req7tabPage.SuspendLayout();
             this.Req8tabPage.SuspendLayout();
+            this.Req9tabPage.SuspendLayout();
+            this.Req10tabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -80,6 +94,8 @@
             this.tabControl1.Controls.Add(this.Req6tabPage);
             this.tabControl1.Controls.Add(this.Req7tabPage);
             this.tabControl1.Controls.Add(this.Req8tabPage);
+            this.tabControl1.Controls.Add(this.Req9tabPage);
+            this.tabControl1.Controls.Add(this.Req10tabPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -116,9 +132,9 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(386, 3);
+            this.listBox1.Location = new System.Drawing.Point(370, 3);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(696, 404);
+            this.listBox1.Size = new System.Drawing.Size(708, 404);
             this.listBox1.TabIndex = 0;
             // 
             // Req2tabPage
@@ -210,9 +226,9 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(490, -1);
+            this.listBox2.Location = new System.Drawing.Point(304, 6);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(594, 468);
+            this.listBox2.Size = new System.Drawing.Size(762, 468);
             this.listBox2.TabIndex = 0;
             // 
             // Req3tabPage
@@ -337,9 +353,9 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(536, 9);
+            this.listBox3.Location = new System.Drawing.Point(410, 0);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(541, 452);
+            this.listBox3.Size = new System.Drawing.Size(656, 452);
             this.listBox3.TabIndex = 0;
             // 
             // Req6tabPage
@@ -355,7 +371,7 @@
             // 
             // SearchReq6button
             // 
-            this.SearchReq6button.Location = new System.Drawing.Point(49, 75);
+            this.SearchReq6button.Location = new System.Drawing.Point(3, 75);
             this.SearchReq6button.Name = "SearchReq6button";
             this.SearchReq6button.Size = new System.Drawing.Size(289, 138);
             this.SearchReq6button.TabIndex = 1;
@@ -367,9 +383,9 @@
             // 
             this.listBox6.FormattingEnabled = true;
             this.listBox6.ItemHeight = 16;
-            this.listBox6.Location = new System.Drawing.Point(444, 3);
+            this.listBox6.Location = new System.Drawing.Point(355, 0);
             this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(622, 452);
+            this.listBox6.Size = new System.Drawing.Size(711, 452);
             this.listBox6.TabIndex = 0;
             // 
             // Req7tabPage
@@ -385,7 +401,7 @@
             // 
             // SearchReq7button
             // 
-            this.SearchReq7button.Location = new System.Drawing.Point(81, 81);
+            this.SearchReq7button.Location = new System.Drawing.Point(3, 91);
             this.SearchReq7button.Name = "SearchReq7button";
             this.SearchReq7button.Size = new System.Drawing.Size(273, 152);
             this.SearchReq7button.TabIndex = 1;
@@ -397,9 +413,9 @@
             // 
             this.listBox7.FormattingEnabled = true;
             this.listBox7.ItemHeight = 16;
-            this.listBox7.Location = new System.Drawing.Point(533, 3);
+            this.listBox7.Location = new System.Drawing.Point(368, 3);
             this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(533, 468);
+            this.listBox7.Size = new System.Drawing.Size(698, 468);
             this.listBox7.TabIndex = 0;
             // 
             // Req8tabPage
@@ -436,10 +452,130 @@
             // 
             this.listBox8.FormattingEnabled = true;
             this.listBox8.ItemHeight = 16;
-            this.listBox8.Location = new System.Drawing.Point(468, 3);
+            this.listBox8.Location = new System.Drawing.Point(317, 3);
             this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(598, 452);
+            this.listBox8.Size = new System.Drawing.Size(749, 452);
             this.listBox8.TabIndex = 0;
+            // 
+            // Req9tabPage
+            // 
+            this.Req9tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Req9tabPage.Controls.Add(this.SearchReq9button);
+            this.Req9tabPage.Controls.Add(this.label8);
+            this.Req9tabPage.Controls.Add(this.Req9YearComboBox);
+            this.Req9tabPage.Controls.Add(this.label7);
+            this.Req9tabPage.Controls.Add(this.Req9ActorComboBox);
+            this.Req9tabPage.Controls.Add(this.listBox9);
+            this.Req9tabPage.Location = new System.Drawing.Point(4, 25);
+            this.Req9tabPage.Name = "Req9tabPage";
+            this.Req9tabPage.Size = new System.Drawing.Size(1084, 474);
+            this.Req9tabPage.TabIndex = 6;
+            this.Req9tabPage.Text = "запрос 9";
+            // 
+            // listBox9
+            // 
+            this.listBox9.FormattingEnabled = true;
+            this.listBox9.ItemHeight = 16;
+            this.listBox9.Location = new System.Drawing.Point(319, 3);
+            this.listBox9.Name = "listBox9";
+            this.listBox9.Size = new System.Drawing.Size(747, 452);
+            this.listBox9.TabIndex = 0;
+            // 
+            // Req9ActorComboBox
+            // 
+            this.Req9ActorComboBox.FormattingEnabled = true;
+            this.Req9ActorComboBox.Location = new System.Drawing.Point(3, 67);
+            this.Req9ActorComboBox.Name = "Req9ActorComboBox";
+            this.Req9ActorComboBox.Size = new System.Drawing.Size(285, 24);
+            this.Req9ActorComboBox.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(3, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Выберите актера";
+            // 
+            // Req9YearComboBox
+            // 
+            this.Req9YearComboBox.FormattingEnabled = true;
+            this.Req9YearComboBox.Location = new System.Drawing.Point(3, 150);
+            this.Req9YearComboBox.Name = "Req9YearComboBox";
+            this.Req9YearComboBox.Size = new System.Drawing.Size(245, 24);
+            this.Req9YearComboBox.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(3, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Выберите год";
+            // 
+            // SearchReq9button
+            // 
+            this.SearchReq9button.Location = new System.Drawing.Point(7, 231);
+            this.SearchReq9button.Name = "SearchReq9button";
+            this.SearchReq9button.Size = new System.Drawing.Size(192, 63);
+            this.SearchReq9button.TabIndex = 8;
+            this.SearchReq9button.Text = "поиск";
+            this.SearchReq9button.UseVisualStyleBackColor = true;
+            this.SearchReq9button.Click += new System.EventHandler(this.SearchReq9button_Click);
+            // 
+            // Req10tabPage
+            // 
+            this.Req10tabPage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Req10tabPage.Controls.Add(this.SearchReq10button);
+            this.Req10tabPage.Controls.Add(this.label9);
+            this.Req10tabPage.Controls.Add(this.Req10HumansComboBox);
+            this.Req10tabPage.Controls.Add(this.listBox10);
+            this.Req10tabPage.Location = new System.Drawing.Point(4, 25);
+            this.Req10tabPage.Name = "Req10tabPage";
+            this.Req10tabPage.Size = new System.Drawing.Size(1084, 474);
+            this.Req10tabPage.TabIndex = 7;
+            this.Req10tabPage.Text = "запрос 10";
+            // 
+            // listBox10
+            // 
+            this.listBox10.FormattingEnabled = true;
+            this.listBox10.ItemHeight = 16;
+            this.listBox10.Location = new System.Drawing.Point(387, 6);
+            this.listBox10.Name = "listBox10";
+            this.listBox10.Size = new System.Drawing.Size(679, 452);
+            this.listBox10.TabIndex = 0;
+            // 
+            // Req10HumansComboBox
+            // 
+            this.Req10HumansComboBox.FormattingEnabled = true;
+            this.Req10HumansComboBox.Location = new System.Drawing.Point(4, 53);
+            this.Req10HumansComboBox.Name = "Req10HumansComboBox";
+            this.Req10HumansComboBox.Size = new System.Drawing.Size(268, 24);
+            this.Req10HumansComboBox.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(3, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 20);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Выберите президента";
+            // 
+            // SearchReq10button
+            // 
+            this.SearchReq10button.Location = new System.Drawing.Point(7, 155);
+            this.SearchReq10button.Name = "SearchReq10button";
+            this.SearchReq10button.Size = new System.Drawing.Size(191, 68);
+            this.SearchReq10button.TabIndex = 7;
+            this.SearchReq10button.Text = "поиск";
+            this.SearchReq10button.UseVisualStyleBackColor = true;
+            this.SearchReq10button.Click += new System.EventHandler(this.SearchReq10button_Click);
             // 
             // RequestsForm
             // 
@@ -462,6 +598,10 @@
             this.Req6tabPage.ResumeLayout(false);
             this.Req7tabPage.ResumeLayout(false);
             this.Req8tabPage.ResumeLayout(false);
+            this.Req9tabPage.ResumeLayout(false);
+            this.Req9tabPage.PerformLayout();
+            this.Req10tabPage.ResumeLayout(false);
+            this.Req10tabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +641,17 @@
         private System.Windows.Forms.Button SearchReq8button;
         private System.Windows.Forms.ComboBox Req8FilmsComboBox;
         private System.Windows.Forms.ListBox listBox8;
+        private System.Windows.Forms.TabPage Req9tabPage;
+        private System.Windows.Forms.Button SearchReq9button;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox Req9YearComboBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox Req9ActorComboBox;
+        private System.Windows.Forms.ListBox listBox9;
+        private System.Windows.Forms.TabPage Req10tabPage;
+        private System.Windows.Forms.Button SearchReq10button;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Req10HumansComboBox;
+        private System.Windows.Forms.ListBox listBox10;
     }
 }

@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\Study\С#\Coursework\Filmography\Filmography\Model\FilmographyModel.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\Study\С#\Coursework\Filmography\Filmography\Model\Filmography.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

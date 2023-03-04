@@ -1,4 +1,5 @@
-﻿using Filmography.Model;
+﻿using Filmography.Controller;
+using Filmography.Model;
 using Filmography.View.Requests;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Filmography.View.UserView
 {
     public partial class UserForm : Form
     {
-        List<Film> myfilms;
+        List<Films> myfilms;
 
         public UserForm()
         {
@@ -32,7 +33,7 @@ namespace Filmography.View.UserView
             MetodComboBox.SelectedIndexChanged += new EventHandler(MetodComboBox_SelectionChangeCommitted);
         }
 
-        private void ShowFilms(Film films)
+        private void ShowFilms(Films films)
         {
             listBox1.Items.Add(films).ToString();
         }

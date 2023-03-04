@@ -12,23 +12,13 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Genre
+    public partial class Users
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Genre()
-        {
-            this.Films = new HashSet<Film>();
-        }
-    
-        public int id { get; set; }
-        public string Genre1 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film> Films { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Genre1}";
-        }
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string E_mail { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+        public string Role { get; set; }
     }
 }

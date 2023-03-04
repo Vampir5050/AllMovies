@@ -12,13 +12,12 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Translations
     {
-        public int Id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-        public string Salt { get; set; }
-        public string E_mail { get; set; }
+        public int id { get; set; }
+        public string Transleyt { get; set; }
+        public Nullable<int> Films_FK { get; set; }
+    
+        public virtual Films Films { get; set; }
     }
 }

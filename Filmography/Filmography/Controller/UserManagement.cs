@@ -1,4 +1,4 @@
-﻿
+﻿using Filmography.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.WebRequestMethods;
 
-namespace Filmography.Model
+namespace Filmography.Controller
 {
     public class UserManagement
     {
-        private readonly Filmography _context;
+        private readonly Filmography.Model.Filmography _context;
 
 
         
@@ -22,7 +22,7 @@ namespace Filmography.Model
         public static UserManagement instance { get => UserManagementCreate.instance; }
         private UserManagement()
         {
-            _context = new Filmography();
+            _context = new Filmography.Model.Filmography();
         }
         private class UserManagementCreate
         {
@@ -31,12 +31,12 @@ namespace Filmography.Model
         }
         //singlton end
 
-        public async Task<List<Film>> LoadFim()
+        public async Task<List<Films>> LoadFim()
         {
            return await _context.Films.ToListAsync();
         }
 
-        public List<Film> Sortdescending(List<Film> films, int index)
+        public List<Films> Sortdescending(List<Films> films, int index)
         {
             
             switch (index)
@@ -66,7 +66,7 @@ namespace Filmography.Model
             return films;
            
         }
-        public List<Film> SortAscending(List<Film> films, int index)
+        public List<Films> SortAscending(List<Films> films, int index)
         {
             switch (index)
             {

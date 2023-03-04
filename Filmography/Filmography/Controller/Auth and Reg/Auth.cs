@@ -1,4 +1,4 @@
-﻿
+﻿using Filmography.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Filmography.Model
+namespace Filmography.Controller
 {
     public class Auth
     {
-        private readonly Filmography _context;
+        private readonly Filmography.Model.Filmography _context;
         private readonly Encrypt _encrypt = new Encrypt();
 
         //singlton start
         public static Auth instance { get => AuthCreate.instance; }
         private Auth()
         {
-            _context = new Filmography();
+            _context = new Filmography.Model.Filmography();
         }
         private class AuthCreate
         {
@@ -29,7 +29,7 @@ namespace Filmography.Model
         //singlton end
 
 
-        public async Task<User> CheckUser(string login)
+        public async Task<Users> CheckUser(string login)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Login == login);
 

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище FilmographyModelContainer" CdmEntityContainer="Filmography">
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="FilmographyModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CountryManufacture" ColumnName="CountryManufacture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Display">
+      <EntityTypeMapping TypeName="FilmographyModel.Display">
+        <MappingFragment StoreEntitySet="Display">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Showing" ColumnName="Showing" />
+          <ScalarProperty Name="Films_FK" ColumnName="Films_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="FilmographyModel.Films">
+        <MappingFragment StoreEntitySet="Films">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="YearRelease" ColumnName="YearRelease" />
+          <ScalarProperty Name="Genres_FK" ColumnName="Genres_FK" />
+          <ScalarProperty Name="Country_FK" ColumnName="Country_FK" />
+          <ScalarProperty Name="Viewers" ColumnName="Viewers" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmStudios">
+      <EntityTypeMapping TypeName="FilmographyModel.FilmStudios">
+        <MappingFragment StoreEntitySet="FilmStudios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Workers_FK" ColumnName="Workers_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="FilmographyModel.Genres">
+        <MappingFragment StoreEntitySet="Genres">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Humans">
+      <EntityTypeMapping TypeName="FilmographyModel.Humans">
+        <MappingFragment StoreEntitySet="Humans">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PlaceResidence" ColumnName="PlaceResidence" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Translations">
+      <EntityTypeMapping TypeName="FilmographyModel.Translations">
+        <MappingFragment StoreEntitySet="Translations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Transleyt" ColumnName="Transleyt" />
+          <ScalarProperty Name="Films_FK" ColumnName="Films_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FilmographyModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="FilmographyModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Films_FK" ColumnName="Films_FK" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Humans_FK" ColumnName="Humans_FK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

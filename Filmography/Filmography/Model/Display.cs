@@ -18,6 +18,6 @@ namespace Filmography.Model
         public string Showing { get; set; }
         public Nullable<int> Films_FK { get; set; }
     
-        public virtual Film Film { get; set; }
+        public virtual Films Films { get; set; }
     }
 }

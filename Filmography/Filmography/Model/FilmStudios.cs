@@ -12,21 +12,12 @@ namespace Filmography.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class FilmStudio
+    public partial class FilmStudios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public FilmStudio()
-        {
-            this.Films = new HashSet<Film>();
-            this.Workers = new HashSet<Worker>();
-        }
-    
         public int id { get; set; }
         public string Name { get; set; }
+        public Nullable<int> Workers_FK { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Film> Films { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Worker> Workers { get; set; }
+        public virtual Workers Workers { get; set; }
     }
 }

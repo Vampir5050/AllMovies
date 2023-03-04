@@ -66,48 +66,48 @@
     <Compile Include="Controller\RequestClass.cs" />
     <Compile Include="Controller\UserManagement.cs" />
     <Compile Include="Controller\Auth and Reg\Reg.cs" />
+    <Compile Include="Controller\Auth and Reg\Encrypt.cs" />
     <Compile Include="Model\Country.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Display.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controller\Auth and Reg\Encrypt.cs" />
-    <Compile Include="Model\Film.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\FilmographyModel.Context.cs">
+    <Compile Include="Model\Filmography.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FilmographyModel.Context.tt</DependentUpon>
+      <DependentUpon>Filmography.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\FilmographyModel.cs">
+    <Compile Include="Model\Filmography.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\FilmographyModel.Designer.cs">
+    <Compile Include="Model\Filmography.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FilmographyModel.edmx</DependentUpon>
+      <DependentUpon>Filmography.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\FilmStudio.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\Films.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Genre.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\FilmStudios.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Human.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\Genres.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Translation.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\Humans.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\Translations.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Worker.cs">
-      <DependentUpon>FilmographyModel.tt</DependentUpon>
+    <Compile Include="Model\Users.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Workers.cs">
+      <DependentUpon>Filmography.tt</DependentUpon>
     </Compile>
     <Compile Include="MoreLinq\MoreEnumerable.MaxBy.cs" />
     <Compile Include="MoreLinq\MoreEnumerable.MinBy.cs" />
@@ -159,12 +159,12 @@
     <EmbeddedResource Include="View\UserView\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\FilmographyModel.edmx">
+    <EntityDeploy Include="Model\Filmography.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FilmographyModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Filmography.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\FilmographyModel.edmx.diagram">
-      <DependentUpon>FilmographyModel.edmx</DependentUpon>
+    <None Include="Model\Filmography.edmx.diagram">
+      <DependentUpon>Filmography.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,18 +191,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\E-mail.png" />
-    <Content Include="Model\FilmographyModel.Context.tt">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Filmography.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FilmographyModel.edmx</DependentUpon>
-      <LastGenOutput>FilmographyModel.Context.cs</LastGenOutput>
+      <DependentUpon>Filmography.edmx</DependentUpon>
+      <LastGenOutput>Filmography.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\FilmographyModel.tt">
+    <Content Include="Model\Filmography.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FilmographyModel.edmx</DependentUpon>
-      <LastGenOutput>FilmographyModel.cs</LastGenOutput>
+      <DependentUpon>Filmography.edmx</DependentUpon>
+      <LastGenOutput>Filmography.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

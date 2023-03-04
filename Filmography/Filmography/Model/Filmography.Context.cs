@@ -25,14 +25,14 @@ namespace Filmography.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Film> Films { get; set; }
-        public virtual DbSet<FilmStudio> FilmStudios { get; set; }
-        public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<Human> Humans { get; set; }
-        public virtual DbSet<Display> Displays { get; set; }
-        public virtual DbSet<Translation> Translations { get; set; }
-        public virtual DbSet<Worker> Workers { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<Display> Display { get; set; }
+        public virtual DbSet<Films> Films { get; set; }
+        public virtual DbSet<FilmStudios> FilmStudios { get; set; }
+        public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Humans> Humans { get; set; }
+        public virtual DbSet<Translations> Translations { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Workers> Workers { get; set; }
     }
 }

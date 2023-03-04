@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Filmography.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -7,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Filmography.Model
+namespace Filmography.Controller.Auth_and_Reg
 {
     public class Reg
     {
-        private readonly Filmography _context;
+        private readonly Filmography.Model.Filmography _context;
         private readonly Encrypt _encrypt = new Encrypt();
         
         
@@ -19,7 +20,7 @@ namespace Filmography.Model
         public static Reg instance { get => RegCreate.instance; }
         private Reg()
         {
-            _context = new Filmography();
+            _context = new Filmography.Model.Filmography();
         }
         private class RegCreate
         {
@@ -29,7 +30,7 @@ namespace Filmography.Model
         //singlton end
 
 
-        public async Task<User> AddUser(User user)
+        public async Task<Users> AddUser(Users user)
         {
             user.Salt = Guid.NewGuid().ToString();
            user.Password = await _encrypt.HashPassword(user.Password, user.Salt);
@@ -39,13 +40,13 @@ namespace Filmography.Model
             return user;
         }
 
-        public async Task<User> CheckUser(string login)
+        public async Task<Users> CheckUser(string login)
         {
             return await _context.Users.FirstOrDefaultAsync(u=>u.Login==login);
             
         }
 
-        public async Task<User> CheckEmail(string email)
+        public async Task<Users> CheckEmail(string email)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.E_mail == email);
         }
