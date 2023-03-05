@@ -37,12 +37,30 @@ namespace Filmography
         {
             if (string.IsNullOrWhiteSpace(LoginTextBox.Text)) return;
             if (string.IsNullOrWhiteSpace(PasswordTextBox.Text)) return;
-            bool check = false;
-            check = await Auth.instance.Login(LoginTextBox.Text, PasswordTextBox.Text);
-            if (check)
+            var check = await Auth.instance.Login(LoginTextBox.Text, PasswordTextBox.Text);
+            if (check!=null)
             {
-                this.Visible = false;
-                if (new UserForm().ShowDialog() == DialogResult.Cancel) Close();
+                if(check.Role=="Пользователь")
+                {
+                    this.Visible = false;
+                    if (new UserForm().ShowDialog() == DialogResult.Cancel) Close();
+                }
+                if (check.Role == "Администратор")
+                {
+                    DialogResult dialogResult = MessageBox.Show("Открыть форму пользователя?", "Открытие формы", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        this.Visible = false;
+                        if (new UserForm().ShowDialog() == DialogResult.Cancel) Close();
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        this.Visible = false;
+                        if (new AdminForms().ShowDialog() == DialogResult.Cancel) Close();
+                    }
+                    
+                }
+
             }
             else
             {
@@ -79,6 +97,11 @@ namespace Filmography
         {
             if (PasswordCheckBox.Checked) PasswordTextBox.UseSystemPasswordChar = true;
             else PasswordTextBox.UseSystemPasswordChar = false;
+        }
+
+        private void AdminButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Login = Александр, Password = 12345");
         }
     }
 }

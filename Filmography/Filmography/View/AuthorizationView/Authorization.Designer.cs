@@ -37,6 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PasswordCheckBox = new System.Windows.Forms.CheckBox();
+            this.AdminButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,12 +137,23 @@
             this.PasswordCheckBox.UseVisualStyleBackColor = true;
             this.PasswordCheckBox.CheckedChanged += new System.EventHandler(this.PasswordCheckBox_CheckedChanged);
             // 
+            // AdminButton
+            // 
+            this.AdminButton.Location = new System.Drawing.Point(455, 12);
+            this.AdminButton.Name = "AdminButton";
+            this.AdminButton.Size = new System.Drawing.Size(93, 23);
+            this.AdminButton.TabIndex = 16;
+            this.AdminButton.Text = "admin";
+            this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);
+            // 
             // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(560, 301);
+            this.Controls.Add(this.AdminButton);
             this.Controls.Add(this.PasswordCheckBox);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LoginTextBox);
@@ -171,6 +183,7 @@
         private System.Windows.Forms.TextBox LoginTextBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox PasswordCheckBox;
+        private System.Windows.Forms.Button AdminButton;
     }
 }
 

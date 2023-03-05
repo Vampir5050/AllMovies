@@ -61,6 +61,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AdminManager.cs" />
+    <Compile Include="Controller\AdminReg.cs" />
+    <Compile Include="View\AdminView\AddView\AddAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\AddAdminForm.Designer.cs">
+      <DependentUpon>AddAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\CountryForm.Designer.cs">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\DisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\DisplayForm.Designer.cs">
+      <DependentUpon>DisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\FilmsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\FilmsForm.Designer.cs">
+      <DependentUpon>FilmsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\FilmsStudiosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\FilmsStudiosForm.Designer.cs">
+      <DependentUpon>FilmsStudiosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\GenresForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\GenresForms.Designer.cs">
+      <DependentUpon>GenresForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\HumansForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\HumansForm.Designer.cs">
+      <DependentUpon>HumansForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\TranslationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\TranslationsForm.Designer.cs">
+      <DependentUpon>TranslationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\WorkersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AddView\WorkersForm.Designer.cs">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminView\AdminForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminView\AdminForms.Designer.cs">
+      <DependentUpon>AdminForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Auth and Reg\Auth.cs" />
     <Compile Include="Controller\Auth and Reg\IEncrypt.cs" />
     <Compile Include="Controller\RequestClass.cs" />
@@ -147,6 +209,36 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\AdminView\AddView\AddAdminForm.resx">
+      <DependentUpon>AddAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\DisplayForm.resx">
+      <DependentUpon>DisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\FilmsForm.resx">
+      <DependentUpon>FilmsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\FilmsStudiosForm.resx">
+      <DependentUpon>FilmsStudiosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\GenresForms.resx">
+      <DependentUpon>GenresForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\HumansForm.resx">
+      <DependentUpon>HumansForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\TranslationsForm.resx">
+      <DependentUpon>TranslationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AddView\WorkersForm.resx">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminView\AdminForms.resx">
+      <DependentUpon>AdminForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AuthorizationView\Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>

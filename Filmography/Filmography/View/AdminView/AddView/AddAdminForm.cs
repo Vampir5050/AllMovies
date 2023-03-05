@@ -1,4 +1,5 @@
-﻿using Filmography.Controller.Auth_and_Reg;
+﻿using Filmography.Controller;
+using Filmography.Controller.Auth_and_Reg;
 using Filmography.Model;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Filmography.View
+namespace Filmography.View.AdminView.AddView
 {
-    public partial class RegistrationForm : Form
+    public partial class AddAdminForm : Form
     {
-        public RegistrationForm()
+        public AddAdminForm()
         {
             InitializeComponent();
-
             LoginTextBox.KeyDown += ColorEvent;
             EmailTextBox.KeyDown += ColorEvent;
             PasswordTextBox.KeyDown += ColorEvent;
             AgainPasTextBox.KeyDown += ColorEvent;
         }
-
-        public void ColorEvent(object sender, EventArgs e)
+        private void ColorEvent(object sender, EventArgs e)
         {
             if (LoginTextBox.Focused) LoginTextBox.BackColor = Color.White;
             if (EmailTextBox.Focused) EmailTextBox.BackColor = Color.White;
@@ -65,12 +64,12 @@ namespace Filmography.View
                 return;
             }
             #endregion
-            await Reg.instance.AddUser(new Users { Login = LoginTextBox.Text, Password = PasswordTextBox.Text, E_mail = EmailTextBox.Text, Role = "Пользователь" });
-            MessageBox.Show("Вы успешно зарегистрированы");
+            await AdminReg.instance.AddUser(new Users { Login = LoginTextBox.Text, Password = PasswordTextBox.Text, E_mail = EmailTextBox.Text, Role = "Администратор" });
+            MessageBox.Show("Вы успешно зарегистрировали администратора");
             this.DialogResult = DialogResult.OK;
-
+            
         }
-     
+
         private void ClearField()
         {
             LoginTextBox.Text = "";

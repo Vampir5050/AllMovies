@@ -35,21 +35,22 @@ namespace Filmography.Controller
 
         }
 
-        public async Task<bool> Login(string login, string password)
+        public async Task<Users> Login(string login, string password)
         {
             var user = await CheckUser(login);
             try
             {
-                if (user.Password == await _encrypt.HashPassword(password, user.Salt)) return true;
-                return false;
+                if (user.Password == await _encrypt.HashPassword(password, user.Salt)) return user;
+                return null;
             }
             catch (Exception)
             {
-                return false;
+                return null;
             }
 
 
 
         }
+
     }
 }

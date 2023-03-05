@@ -18,3 +18,13 @@ D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.Regis
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.AuthorizationForm.resources
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.UserView.UserForm.resources
 D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.Requests.RequestsForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.AdminForms.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.CountryForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.FilmsForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.GenresForms.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.TranslationsForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.HumansForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.DisplayForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.AddAdminForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.FilmsStudiosForm.resources
+D:\Study\С#\Coursework\Filmography\Filmography\obj\Debug\Filmography.View.AdminView.AddView.WorkersForm.resources
