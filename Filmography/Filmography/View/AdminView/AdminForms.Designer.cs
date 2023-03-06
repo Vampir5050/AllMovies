@@ -101,7 +101,7 @@
             this.AddFilmsStudiosButton.Name = "AddFilmsStudiosButton";
             this.AddFilmsStudiosButton.Size = new System.Drawing.Size(212, 82);
             this.AddFilmsStudiosButton.TabIndex = 5;
-            this.AddFilmsStudiosButton.Text = "добавить киностудию";
+            this.AddFilmsStudiosButton.Text = "киностудия - добавить/изменить/удалить";
             this.AddFilmsStudiosButton.UseVisualStyleBackColor = true;
             this.AddFilmsStudiosButton.Click += new System.EventHandler(this.AddFilmsStudiosButton_Click);
             // 
@@ -123,7 +123,7 @@
             this.AddWorkersButton.Name = "AddWorkersButton";
             this.AddWorkersButton.Size = new System.Drawing.Size(212, 82);
             this.AddWorkersButton.TabIndex = 7;
-            this.AddWorkersButton.Text = "добавить сотрудников";
+            this.AddWorkersButton.Text = "сотрудники - добавить/удалить";
             this.AddWorkersButton.UseVisualStyleBackColor = true;
             this.AddWorkersButton.Click += new System.EventHandler(this.AddWorkersButton_Click);
             // 

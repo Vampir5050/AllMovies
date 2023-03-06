@@ -47,16 +47,17 @@ namespace Filmography
                 }
                 if (check.Role == "Администратор")
                 {
-                    DialogResult dialogResult = MessageBox.Show("Открыть форму пользователя?", "Открытие формы", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Открыть форму администратора? Yes - форма админа, No - форма пользователя", "Открытие формы", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         this.Visible = false;
-                        if (new UserForm().ShowDialog() == DialogResult.Cancel) Close();
+                        if (new AdminForms().ShowDialog() == DialogResult.Cancel) Close();
+                       
                     }
                     else if (dialogResult == DialogResult.No)
                     {
                         this.Visible = false;
-                        if (new AdminForms().ShowDialog() == DialogResult.Cancel) Close();
+                        if (new UserForm().ShowDialog() == DialogResult.Cancel) Close();
                     }
                     
                 }

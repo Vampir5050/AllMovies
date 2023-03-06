@@ -111,7 +111,7 @@ namespace Filmography.View.AdminView.AddView
                 RemoveFilmsComboBox.Text = "";
                 return;
             }
-            MessageBox.Show("Фильму успешно удален!");
+            MessageBox.Show("Фильм успешно удален!");
             UpdateFilms();
 
         }

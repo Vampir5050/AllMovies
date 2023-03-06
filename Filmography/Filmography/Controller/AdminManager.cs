@@ -5,9 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -83,17 +85,55 @@ namespace Filmography.Controller
             await _context.SaveChangesAsync();
             return displays;
         }
+        public async Task<FilmStudios>AddFilmsStudios(FilmStudios filmsStudios)
+        {
+            _context.FilmStudios.Add(filmsStudios);
+            await _context.SaveChangesAsync();
+            return filmsStudios;
+        }
+        public async Task<Workers>AddWorkers(string filmName, string post, int humanId)
+        {
+            var film = await _context.Films.FirstOrDefaultAsync(x => x.Name == filmName);
+            var human = await _context.Humans.FirstOrDefaultAsync(x => x.id == humanId);
+            Workers workers = new Workers();
+            workers.Films_FK = film.id;
+            workers.Post = post;
+            workers.Humans_FK = human.id;
+           
+            var workersCol = await _context.Workers.Include(x => x.Films).Include(x => x.Humans).ToListAsync();
+            workersCol = (from x in workersCol
+                          where x.Films_FK == workers.Films_FK && x.Humans_FK == workers.Humans_FK && x.Post == workers.Post
+                          select x).ToList();
+            if (workersCol.Count != 0) return null;
+            _context.Workers.Add(workers);
+            await _context.SaveChangesAsync();
+            return workers;
+           
+        }
+        public async Task<Workers>AddPrezident(int humanId, string studiosName)
+        {
+            var studios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == studiosName);
+            if (studios.Workers_FK != null) return null;
+            var human = await _context.Humans.FirstOrDefaultAsync(x => x.id == humanId);
+            var workers = await _context.Workers.Where(x => x.Humans_FK == human.id && x.Post == "Президент").FirstOrDefaultAsync();
+            if (workers != null) return null;
+            Workers workersNew = new Workers()
+            {
+                Films_FK = null,
+                Post = "Президент",
+                Humans_FK = human.id
+            };
+            _context.Workers.Add(workersNew);
+            studios.Workers_FK = human.id;
+            await _context.SaveChangesAsync();
+            return workersNew;
+
+        }
         //методы добавления end
 
 
+       
         //методы проверок start
-        public async Task<Films> ChangeFilms(Films filmsChange)
-        {
-            var film = await ReturnFilms(filmsChange.Name);
-            film = filmsChange;
-            await _context.SaveChangesAsync();
-            return film;
-        }
         public async Task<Films> CheckFilmsTrancleyt(string name)
         {
             var films = await _context.Films.FirstOrDefaultAsync(x => x.Name == name);
@@ -113,6 +153,11 @@ namespace Filmography.Controller
                          select x).ToList();
             if (display.Count != 0) return null;
             else return films;
+        }
+        public async Task<FilmStudios>ChecStudios(string name)
+        {
+            var stidios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == name);
+            return stidios;
         }
         //методы проверок end
 
@@ -146,7 +191,55 @@ namespace Filmography.Controller
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task<bool>RemoveFilmStudios(string name)
+        {
+            var studios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == name);
+            _context.FilmStudios.Remove(studios);
+            await _context.SaveChangesAsync();
+            return true;
+
+        }
+        public async Task<bool>RemoveWorkers(string filmName, string post, int humanId)
+        {
+            var film = await _context.Films.FirstOrDefaultAsync(x => x.Name == filmName);
+            var human = await _context.Humans.FirstOrDefaultAsync(x => x.id == humanId);
+            Workers workers = await _context.Workers.Where(x => x.Films_FK == film.id && x.Humans_FK == human.id && x.Post == post).FirstOrDefaultAsync();
+            if (workers==null) return false;
+            _context.Workers.Remove(workers);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<bool>RemovePrezident(int humanId, string studiosName)
+        {
+            var studios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == studiosName);
+            if (studios.Workers_FK ==null) return false;
+            var human = await _context.Humans.FirstOrDefaultAsync(x => x.id == humanId);
+            var workers = await _context.Workers.Where(x => x.Humans_FK == human.id && x.Post == "Президент").FirstOrDefaultAsync();
+            if (workers == null) return false;
+            _context.Workers.Remove(workers);
+            studios.Workers_FK = null;
+            await _context.SaveChangesAsync();
+            return true;
+        }
         //методы удаления end
+
+        //методы для изменений start
+        public async Task<FilmStudios> ChangeFilmStudios(FilmStudios filmStudios, string newName)
+        {
+            var studios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == filmStudios.Name);
+            studios.Name = newName;
+            await _context.SaveChangesAsync();
+            return studios;
+        }
+        public async Task<Films> ChangeFilms(Films filmsChange)
+        {
+            var film = await ReturnFilms(filmsChange.Name);
+            film = filmsChange;
+            await _context.SaveChangesAsync();
+            return film;
+        }
+        //методы для изменений end
+
 
         //методы получения коллекции с базы start
         public async Task<List<Country>> GetCountry()
@@ -165,11 +258,18 @@ namespace Filmography.Controller
         {
             return await _context.Humans.ToListAsync();
         }
+        public async Task<List<FilmStudios>>GetFilmStudios()
+        {
+            return await _context.FilmStudios.ToListAsync();
+        }
+
         public async Task<Films> ReturnFilms(string name)
         {
             return await _context.Films.FirstOrDefaultAsync(x => x.Name == name);
         }
         //методы получения коллекции с базы end
+
+        
 
 
 

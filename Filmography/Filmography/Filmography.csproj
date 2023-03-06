@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AdminManager.cs" />
-    <Compile Include="Controller\AdminReg.cs" />
+    <Compile Include="Controller\Auth and Reg\AdminReg.cs" />
     <Compile Include="View\AdminView\AddView\AddAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>

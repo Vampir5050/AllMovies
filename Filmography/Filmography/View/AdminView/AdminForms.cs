@@ -16,8 +16,7 @@ namespace Filmography
         public AdminForms()
         {
             InitializeComponent();
-            AddWorkersButton.Visible = false;
-            AddFilmsStudiosButton.Visible = false;
+          
         }
 
         private void AddGanresButton_Click(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace Filmography
 
         private void AddFilmsStudiosButton_Click(object sender, EventArgs e)
         {
-
+            new FilmsStudiosForm().ShowDialog();
         }
 
         private void AddHumansButton_Click(object sender, EventArgs e)
@@ -57,7 +56,7 @@ namespace Filmography
 
         private void AddWorkersButton_Click(object sender, EventArgs e)
         {
-
+            new WorkersForm().ShowDialog();
         }
 
         private void AddAdminButton_Click(object sender, EventArgs e)
