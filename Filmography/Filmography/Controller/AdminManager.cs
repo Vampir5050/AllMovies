@@ -194,6 +194,7 @@ namespace Filmography.Controller
         public async Task<bool>RemoveFilmStudios(string name)
         {
             var studios = await _context.FilmStudios.FirstOrDefaultAsync(x => x.Name == name);
+            if (studios.Workers_FK != null) return false;
             _context.FilmStudios.Remove(studios);
             await _context.SaveChangesAsync();
             return true;

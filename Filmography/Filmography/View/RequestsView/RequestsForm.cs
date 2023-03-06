@@ -29,7 +29,6 @@ namespace Filmography.View.Requests
             Request1comboBox.SelectedIndexChanged += new EventHandler(Requestions1Event);
             Req7tabPage.Parent = null;
 
-
             GenreComboBox.SelectedIndexChanged += new EventHandler(Requestions2Event);
             CountrycomboBox.SelectedIndexChanged += new EventHandler(Requestions2Event);
 

@@ -66,7 +66,7 @@
             this.AddFilmsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddFilmsButton.Location = new System.Drawing.Point(748, 12);
             this.AddFilmsButton.Name = "AddFilmsButton";
-            this.AddFilmsButton.Size = new System.Drawing.Size(212, 82);
+            this.AddFilmsButton.Size = new System.Drawing.Size(221, 82);
             this.AddFilmsButton.TabIndex = 2;
             this.AddFilmsButton.Text = "фильм - добавить/изменить/удалить";
             this.AddFilmsButton.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@
             this.AddFilmsStudiosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AddFilmsStudiosButton.Location = new System.Drawing.Point(748, 131);
             this.AddFilmsStudiosButton.Name = "AddFilmsStudiosButton";
-            this.AddFilmsStudiosButton.Size = new System.Drawing.Size(212, 82);
+            this.AddFilmsStudiosButton.Size = new System.Drawing.Size(221, 82);
             this.AddFilmsStudiosButton.TabIndex = 5;
             this.AddFilmsStudiosButton.Text = "киностудия - добавить/изменить/удалить";
             this.AddFilmsStudiosButton.UseVisualStyleBackColor = true;

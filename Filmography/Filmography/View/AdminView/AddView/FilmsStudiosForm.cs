@@ -70,7 +70,13 @@ namespace Filmography.View.AdminView.AddView
         private async void RemoveButton_Click(object sender, EventArgs e)
         {
             if (StudiosComboBox.SelectedItem == null) return;
-            await AdminManager.instance.RemoveFilmStudios(StudiosComboBox.SelectedItem.ToString());
+            var check = await AdminManager.instance.RemoveFilmStudios(StudiosComboBox.SelectedItem.ToString());
+            if(check==false)
+            {
+                MessageBox.Show("Невозможно удалить т.к. имеется президент! Удалите сначала президента в таблице сотрудников!");
+                StudiosComboBox.SelectedItem = null; ;
+                return;
+            }
             MessageBox.Show("Удаление прошло успешно!");
             StudiosComboBox.SelectedItem = null; ;
             UpdateStudios();
